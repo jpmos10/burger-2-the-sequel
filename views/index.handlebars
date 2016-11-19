@@ -1,0 +1,35 @@
+</div>
+      <div class="col-md-6 col-xs-12">
+        <h1>Devoured Burgers</h1>
+          {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="row burgers">
+              <div class="col-xs-6 burger">
+                <h2>{{this.burger_name}}</h2>
+              </div>
+              <div class="col-xs-6">
+                <form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
+                  <button class="btn btn-danger btn-sm" type="submit">DELETE!</button>
+                </form>
+              </div>
+            </div>
+            <hr class="break">
+            {{/if}}
+          {{/each}}
+      </div>
+    </div>
+    <div class="row bottom">
+      <h1>Add a Burger</h1>
+      <form class="form-inline" action="burgers/create" method="POST">
+        <div class="form-group">
+          <label for="ca"><h4>Burger Name:</h4></label>
+          <input type="text" id="ca" name="name" class="form-control" required>
+        </div>
+        <button class="btn btn-success" type="submit"><i class="fa fa-plus" aria-hidden="true"></i>Add Burger</button>
+      </form>
+    </div>
+  </div>
+</div>
+</main>
+<footer>
+</footer>
